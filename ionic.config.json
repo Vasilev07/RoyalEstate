@@ -1,0 +1,7 @@
+{
+  "name": "RoyalEstate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
