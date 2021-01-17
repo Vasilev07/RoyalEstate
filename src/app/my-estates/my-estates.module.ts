@@ -2,10 +2,11 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import { MyEstatesPage } from './my-estates.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { MyEstatesRoutingModule } from './my-estates-routing.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -13,8 +14,10 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    MyEstatesRoutingModule,
+    HttpClientModule
   ],
-  declarations: [Tab1Page]
+  declarations: [MyEstatesPage],
+  providers: [HttpClient]
 })
-export class Tab1PageModule {}
+export class MyEstatesPageModule {}
