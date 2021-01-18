@@ -9,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'overview',
-        loadChildren: () => import('../estate-overview/estate-overview.module').then(m => m.EstateOverviewPageModule)
+        loadChildren: () => import('./estate-overview/estate-overview.module').then(m => m.EstateOverviewPageModule)
       },
       {
         path: 'map',
-        loadChildren: () => import('../estate-map/estate-map.module').then(m => m.EstateMapPageModule)
+        loadChildren: () => import('./estate-map/estate-map.module').then(m => m.EstateMapPageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: '',

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { EstateOverviewPage } from './estate-overview.page';
+import { EstateMapPage } from './estate-map.page';
 
-describe('MyEstatesPage', () => {
-  let component: EstateOverviewPage;
-  let fixture: ComponentFixture<EstateOverviewPage>;
+describe('EstateMapPage', () => {
+  let component: EstateMapPage;
+  let fixture: ComponentFixture<EstateMapPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [EstateOverviewPage],
+      declarations: [EstateMapPage],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EstateOverviewPage);
+    fixture = TestBed.createComponent(EstateMapPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

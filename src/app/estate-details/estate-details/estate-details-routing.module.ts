@@ -10,11 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'overview',
-        loadChildren: () => import('../../estate-overview/estate-overview.module').then( m => m.EstateOverviewPageModule)
+        loadChildren: () => import('../../tabs/estate-overview/estate-overview.module').then( m => m.EstateOverviewPageModule)
       },
       {
         path: 'map',
-        loadChildren: () => import('../../estate-map/estate-map.module').then( m => m.EstateMapPageModule)
+        loadChildren: () => import('../../tabs/estate-map/estate-map.module').then( m => m.EstateMapPageModule)
       }
     ]
   }
