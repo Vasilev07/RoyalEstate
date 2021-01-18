@@ -21,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/estates-details/:id/tab1',
+        redirectTo: '/estates-details/:id/overview',
         pathMatch: 'full'
       }
     ]
