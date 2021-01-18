@@ -14,9 +14,11 @@ export class Tab1 {
   }
 
   public async ionViewDidEnter(): Promise<void> {
-    console.log('asdasdasd');
-
     this.estate = await this.storage.get('currentEstate');
+  }
+
+  public onSaveButtonClick(): void {
+
   }
 }
 

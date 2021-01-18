@@ -5,9 +5,9 @@
   <ion-card *ngIf="estate">
     <img src="{{estate.image}}">
     <ion-card-content>
-      <ion-button size="small" fill="outline" slot="start" (click)="onSaveEstatesButtonClick()">
+      <ion-button size="small" fill="outline" slot="start" (click)="onSaveButtonClick()">
         <ion-icon name="bookmark"></ion-icon>
-        {{saveEstatesButtonTitle}}
+        Save to my estates
       </ion-button>
       <ion-grid>
         <ion-row>
@@ -30,6 +30,9 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <ion-item>
+        {{ estate.address }}
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>
