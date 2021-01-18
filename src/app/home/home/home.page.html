@@ -12,6 +12,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="estates">
+  <ion-card *ngFor="let singleEstate of estates">
+    <ion-card-header>
+      <ion-card-subtitle>{{name}} {{ singleEstate.region}}</ion-card-subtitle>
+      <ion-card-title>Ref No.{{singleEstate.refNumber}}</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content>
+      <ion-img src="{{singleEstate.image}}"></ion-img>
+      <h3></h3>
+      <p>Address: {{ singleEstate.address }}</p>
+      <p>Type: {{ singleEstate.type }}</p>
+    </ion-card-content>
+    <ion-button (click)="onEstateClick(singleEstate.id)">View</ion-button>
+  </ion-card>
 </ion-content>

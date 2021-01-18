@@ -7,12 +7,12 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private estates;
+  private estates = [];
   constructor(private readonly storage: Storage) { }
 
   public async ngOnInit(): Promise<void> {
     try {
-      this.estates = await this.storage.get('savedEstate');
+      this.estates = [...await this.storage.get('savedEstate')];
       console.log(this.estates);
     } catch (error) {
       

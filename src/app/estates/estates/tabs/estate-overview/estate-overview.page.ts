@@ -9,7 +9,7 @@ import { Storage } from '@ionic/Storage';
 export class EstateOverviewPage {
   private estate;
   public isSaved: boolean = false;
-
+  private estates = [];
   constructor(private storage: Storage) {
     
   }
@@ -17,7 +17,8 @@ export class EstateOverviewPage {
   public async ionViewDidEnter(): Promise<void> {
     try {
       this.estate = await this.storage.get('currentEstate');
-      
+      this.estates = [...await this.storage.get('savedEstate')];
+      console.log('estates', this.estates);
     } catch (error) {
       this.isSaved = false;
     }
@@ -26,7 +27,8 @@ export class EstateOverviewPage {
 
   public onSaveButtonClick(): void {
     this.isSaved = true;
-    this.storage.set('savedEstate', this.estate);
+    this.estates = [...this.estates, this.estate];
+    this.storage.set('savedEstate', this.estates);
   }
 
   public onRemoveButtonClicked(): void {
