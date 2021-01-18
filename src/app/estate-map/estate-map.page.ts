@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-estate-map',
+  templateUrl: 'estate-map.page.html',
+  styleUrls: ['estate-map.page.scss']
 })
-export class Tab2Page {
+export class EstateMapPage {
   private estate;
 
   constructor(private readonly storage: Storage) {}
