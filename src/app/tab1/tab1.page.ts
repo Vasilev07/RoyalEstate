@@ -8,17 +8,30 @@ import { Storage } from '@ionic/Storage';
 })
 export class Tab1 {
   private estate;
+  public isSaved: boolean = false;
 
   constructor(private storage: Storage) {
     
   }
 
   public async ionViewDidEnter(): Promise<void> {
-    this.estate = await this.storage.get('currentEstate');
+    try {
+      this.estate = await this.storage.get('currentEstate');
+      
+    } catch (error) {
+      this.isSaved = false;
+    }
+
   }
 
   public onSaveButtonClick(): void {
+    this.isSaved = true;
+    this.storage.set('savedEstate', this.estate);
+  }
 
+  public onRemoveButtonClicked(): void {
+    this.isSaved = false;
+    this.storage.remove('savedEstate');
   }
 }
 

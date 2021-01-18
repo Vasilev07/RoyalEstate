@@ -1,13 +1,14 @@
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="refreshEstate($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
   <ion-card *ngIf="estate">
     <img src="{{estate.image}}">
     <ion-card-content>
-      <ion-button size="small" fill="outline" slot="start" (click)="onSaveButtonClick()">
+      <ion-button *ngIf="!isSaved" size="small" fill="outline" slot="start" (click)="onSaveButtonClick()">
         <ion-icon name="bookmark"></ion-icon>
         Save to my estates
+      </ion-button>
+      <ion-button color="danger" *ngIf="isSaved" size="small" fill="outline" slot="start" (click)="onRemoveButtonClicked()">
+        <ion-icon name="bookmark"></ion-icon>
+        Remove from saved estates
       </ion-button>
       <ion-grid>
         <ion-row>
