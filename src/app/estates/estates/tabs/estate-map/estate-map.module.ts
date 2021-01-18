@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EstateMapPage } from './estate-map.page';
-import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
+import { ExploreContainerComponentModule } from '../../../../explore-container/explore-container.module';
 
 import { EstateMapPageRoutingModule } from './estate-map-routing.module';
 import { AgmCoreModule } from '@agm/core';
