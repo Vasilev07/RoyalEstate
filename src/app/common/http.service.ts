@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { parse } from "path";
 import { Observable } from "rxjs";
-import { find, map, tap } from "rxjs/operators";
+import { map, tap } from "rxjs/operators";
 import { ILocation } from "./interfaces/locations.interface";
 
 @Injectable({

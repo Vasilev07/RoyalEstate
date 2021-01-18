@@ -7,8 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { EstateDetailsPageRoutingModule } from './estate-details-routing.module';
 
 import { EstateDetailsPage } from './estate-details.page';
-import { IonicStorageModule } from '@ionic/storage';
-import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
@@ -16,10 +14,10 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     IonicModule,
     EstateDetailsPageRoutingModule,
-    IonicStorageModule,
-     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApDyHfVZbbCjO0O1nf_pgv4YZf8RVqfmA'
-    })
+    // IonicStorageModule,
+    //  AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyApDyHfVZbbCjO0O1nf_pgv4YZf8RVqfmA'
+    // })
   ],
   declarations: [EstateDetailsPage]
 })

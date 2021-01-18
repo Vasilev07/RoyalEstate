@@ -6,7 +6,6 @@ import { EstateMapPage } from './estate-map.page';
 import { ExploreContainerComponentModule } from '../../../../explore-container/explore-container.module';
 
 import { EstateMapPageRoutingModule } from './estate-map-routing.module';
-import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
@@ -15,9 +14,9 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     ExploreContainerComponentModule,
     EstateMapPageRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyApDyHfVZbbCjO0O1nf_pgv4YZf8RVqfmA'
-    })
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyApDyHfVZbbCjO0O1nf_pgv4YZf8RVqfmA'
+    // })
   ],
   declarations: [EstateMapPage]
 })
