@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./home/home/home.module').then(m => m.HomePageModule),
+    pathMatch: 'full'
   },
   {
     path: 'locations',
@@ -18,7 +19,6 @@ const routes: Routes = [
     path: 'estate-details/:id',
     loadChildren: () => import('./estate-details/estate-details/estate-details.module').then( m => m.EstateDetailsPageModule)
   }
-
 ];
 @NgModule({
   imports: [

@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { parse } from "path";
 import { Observable } from "rxjs";
 import { find, map, tap } from "rxjs/operators";
+import { ILocation } from "./interfaces/locations.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class HttpService {
     constructor(private readonly http: HttpClient) { }
 
     public getLocations(): Observable<any> {
-        return this.http.get<any>(`${this.baseUrl}${this.locationsUrl}`);
+        return this.http.get<ILocation>(`${this.baseUrl}${this.locationsUrl}`);
     }
 
     public getEstates(): Observable<any> {

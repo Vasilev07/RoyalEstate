@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { HttpService } from 'src/app/common/http.service';
+import { ILocation } from 'src/app/common/interfaces/locations.interface';
 
 @Component({
   selector: 'app-locations',
@@ -11,25 +13,22 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./locations.page.scss'],
 })
 export class LocationsPage implements OnInit {
-  private baseUrl = 'https://royalestate-53406-default-rtdb.firebaseio.com/';
-  private locations: any;
-  private unsubscribe: Subject<any> = new Subject();
+  private locations: ILocation[] = [];
+  private unsubscribe: Subject<void> = new Subject();
 
-  constructor(private readonly http: HttpClient,
+  constructor(private readonly httpService: HttpService,
               private readonly loadingController: LoadingController,
               private readonly router: Router) { }
 
   public ngOnInit() {
-      // this.showLoadBar();
+      this.showLoadBar();
 
-      this.http.get(`${this.baseUrl}/locations.json`)
+      this.httpService.getLocations()
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe((locations) => {
+      .subscribe((locations: ILocation[]) => {
         this.locations = locations;
-        // this.loadingController.dismiss();
-        console.log(this.locations);
+        this.loadingController.dismiss();
     });
-    // this.loadingController.dismiss();
   }
 
   public locationClick(name: string) {
