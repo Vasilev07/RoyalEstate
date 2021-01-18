@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Storage } from '@ionic/Storage';
 
 @Component({
   selector: 'app-tab1',

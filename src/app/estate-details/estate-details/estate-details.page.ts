@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { EstateService } from 'src/app/common/estate.service';
+import { Storage } from '@ionic/Storage';
 import { HttpService } from 'src/app/common/http.service';
 
 @Component({
