@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Estates</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="estates && estates.length > 0">
+    <ng-container class="content-wrap" *ngFor="let estate of estates">
+      
+      <ion-card *ngFor="let singleEstate of estate.estates">
+        <ion-card-header>
+          <ion-card-subtitle>{{name}} {{ singleEstate.region}}</ion-card-subtitle>
+          <ion-card-title>Ref No.{{singleEstate.refNumber}}</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <ion-img src="{{singleEstate.image}}"></ion-img>
+          <h3></h3>
+          <p>Address: {{ singleEstate.address }}</p>
+          <p>Type: {{ singleEstate.type }}</p>
+        </ion-card-content>
+        <ion-button (click)="onEstateClick(singleEstate.id)">View</ion-button>
+      </ion-card>
+    </ng-container>
+  </ng-container>
+</ion-content>
