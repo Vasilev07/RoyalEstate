@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'estate-details/:id',
-    loadChildren: () => import('./estate-details/estate-details/estate-details.module').then( m => m.EstateDetailsPageModule)
+    loadChildren: () => import('../app/estates/estates/estate-details/estate-details/estate-details.module').then( m => m.EstateDetailsPageModule)
   }
 ];
 @NgModule({
