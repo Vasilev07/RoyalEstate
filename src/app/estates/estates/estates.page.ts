@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { filter, map, tap } from 'rxjs/operators';
 import { HttpService } from 'src/app/common/http.service';
+import { IEstates } from 'src/app/common/interfaces/estates.iterface';
 
 @Component({
   selector: 'app-estates',
@@ -13,7 +14,7 @@ import { HttpService } from 'src/app/common/http.service';
 })
 export class EstatesPage implements OnInit {
 
-  public estates: any;
+  public estates: IEstates[];
   private name: string;
 
   constructor(private readonly httpService: HttpService,
@@ -25,9 +26,11 @@ export class EstatesPage implements OnInit {
   
   public ngOnInit(): void {
     this.showLoadBar();
+
     this.name = this.activatedRoute.snapshot.paramMap.get('name');
+
     this.httpService.getEstates()
-      .subscribe((estates) => {
+      .subscribe((estates: IEstates[]) => {
         this.estates = estates.filter((estate) => estate.location.name === this.name);
         this.loadingController.dismiss();
       });

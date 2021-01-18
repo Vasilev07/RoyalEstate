@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Storage } from '@ionic/Storage';
 import { HttpService } from 'src/app/common/http.service';
+import { IEstate } from 'src/app/common/interfaces/estate.interface';
 
 @Component({
   selector: 'app-estate-details',
@@ -12,8 +13,8 @@ import { HttpService } from 'src/app/common/http.service';
 })
 export class EstateDetailsPage implements OnInit, OnDestroy {
   private estateId: string;
-  private estate: any;
-  private unsubscribe = new Subject();
+  private estate: IEstate;
+  private unsubscribe: Subject<void> = new Subject();
 
   constructor(private readonly httpService: HttpService,
               private readonly activatedRoute: ActivatedRoute,
@@ -23,9 +24,8 @@ export class EstateDetailsPage implements OnInit, OnDestroy {
     this.estateId = this.activatedRoute.snapshot.paramMap.get('id');
     this.httpService.getEstate(this.estateId)
       .pipe(takeUntil(this.unsubscribe))
-      .subscribe((estate) => {
+      .subscribe((estate: IEstate) => {
         this.estate = estate;
-        console.log("SHOULD BE SENT", estate);
         this.storage.set('currentEstate', this.estate);
       });
   }
