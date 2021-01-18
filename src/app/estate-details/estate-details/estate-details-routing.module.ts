@@ -6,7 +6,13 @@ import { EstateDetailsPage } from './estate-details.page';
 const routes: Routes = [
   {
     path: '',
-    component: EstateDetailsPage
+    component: EstateDetailsPage,
+    children: [
+      {
+        path: 'overview',
+        loadChildren: () => import('../../tab1/tab1.module').then( m => m.Tab1PageModule)
+      }
+    ]
   }
 ];
 
