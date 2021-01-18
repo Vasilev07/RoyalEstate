@@ -25,6 +25,9 @@
       <p>Address: {{ singleEstate.address }}</p>
       <p>Type: {{ singleEstate.type }}</p>
     </ion-card-content>
-    <ion-button (click)="onEstateClick(singleEstate.id)">View</ion-button>
+    <ion-button (click)="onEstateClick(singleEstate.id)">
+      <ion-icon slot="start" name="search"></ion-icon>
+      Find Location
+    </ion-button>
   </ion-card>
 </ion-content>
