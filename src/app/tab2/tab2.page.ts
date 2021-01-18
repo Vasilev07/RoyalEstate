@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  private estate;
 
-  constructor() {}
+  constructor(private readonly storage: Storage) {}
 
+  public async ionViewDidEnter(): Promise<void> {
+    try {
+      this.estate = await this.storage.get('currentEstate');
+      console.log(this.estate);
+    } catch (error) {
+    
+    }
+
+  }
 }
