@@ -2,11 +2,11 @@ import { Component} from '@angular/core';
 import { Storage } from '@ionic/Storage';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-estate-overview',
+  templateUrl: 'estate-overview.page.html',
+  styleUrls: ['estate-overview.page.scss']
 })
-export class Tab1 {
+export class EstateOverviewPage {
   private estate;
   public isSaved: boolean = false;
 

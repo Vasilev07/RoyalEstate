@@ -2,19 +2,19 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1 } from './tab1.page';
+import { EstateOverviewPage } from './estate-overview.page';
 
 describe('MyEstatesPage', () => {
-  let component: Tab1;
-  let fixture: ComponentFixture<Tab1>;
+  let component: EstateOverviewPage;
+  let fixture: ComponentFixture<EstateOverviewPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab1],
+      declarations: [EstateOverviewPage],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tab1);
+    fixture = TestBed.createComponent(EstateOverviewPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

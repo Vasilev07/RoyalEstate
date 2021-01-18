@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1 } from './tab1.page';
+import { EstateOverviewPage } from './estate-overview.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1RoutingModule } from './tab1-routing.module';
+import { EstateOverviewRoutingModule } from './estate-overview-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EstateService } from '../common/estate.service';
 
@@ -15,10 +15,10 @@ import { EstateService } from '../common/estate.service';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1RoutingModule,
+    EstateOverviewRoutingModule,
     HttpClientModule,
   ],
-  declarations: [Tab1],
+  declarations: [EstateOverviewPage],
   providers: [HttpClient, EstateService]
 })
-export class Tab1PageModule {}
+export class EstateOverviewPageModule {}
