@@ -20,7 +20,7 @@ export class LocationsPage implements OnInit {
               private readonly loadingController: LoadingController,
               private readonly router: Router) { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
       this.showLoadBar();
 
       this.httpService.getLocations()
@@ -31,7 +31,7 @@ export class LocationsPage implements OnInit {
     });
   }
 
-  public locationClick(name: string) {
+  public locationClick(name: string): void {
     this.router.navigate(['/estates', name]);
   }
 
@@ -40,10 +40,14 @@ export class LocationsPage implements OnInit {
     this.unsubscribe.complete();
   }
 
-  public async showLoadBar() {
+  public async showLoadBar(): Promise<void> {
     const loading = await this.loadingController.create({
       message: 'Loading Locations...'
     });
     await loading.present();
+  }
+
+  public onBackClicked(): void {
+    this.router.navigate(['/']);
   }
 }
