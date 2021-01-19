@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('./estate-map/estate-map.module').then(m => m.EstateMapPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'similar',
+        loadChildren: () => import('./estate-similar/estate-similar.module').then(m => m.EstateSimilarPageModule)
       }
     ]
   }

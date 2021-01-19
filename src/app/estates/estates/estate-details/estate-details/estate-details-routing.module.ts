@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'map',
         loadChildren: () => import('../../tabs/estate-map/estate-map.module').then( m => m.EstateMapPageModule)
+      },
+      {
+        path: 'similar',
+        loadChildren: () => import('../../tabs/estate-similar/estate-similar.module').then( m => m.EstateSimilarPageModule)
       }
     ]
   }
