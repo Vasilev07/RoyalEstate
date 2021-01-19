@@ -24,8 +24,9 @@
       <h3></h3>
       <p>Address: {{ singleEstate.address }}</p>
       <p>Type: {{ singleEstate.type }}</p>
+      <a (click)="onEstateViewClick(singleEstate)" color="primary">VIEW</a>
     </ion-card-content>
-    <ion-button (click)="onEstateClick(singleEstate.id)">
+    <ion-button style="padding-left: 22%;" (click)="onEstateClick(singleEstate.id)" href="/locations">
       <ion-icon slot="start" name="search"></ion-icon>
       Find Location
     </ion-button>
