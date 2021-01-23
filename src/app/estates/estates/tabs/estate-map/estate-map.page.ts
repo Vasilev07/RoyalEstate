@@ -14,7 +14,6 @@ export class EstateMapPage {
   public async ionViewDidEnter(): Promise<void> {
     try {
       this.estate = await this.storage.get('currentEstate');
-      console.log(this.estate);
     } catch (error) {
     
     }

@@ -29,20 +29,17 @@ export class HttpService {
         return this.http.get(`${this.baseUrl}${this.estatesDataUrl}`)
             .pipe(
                 map((e) => {
-                    let foundEstate;
-                    console.log(id);
-                    console.log(Object.values(e));    
+                    let foundEstate;  
                     Object.values(e).forEach((estate) => {
                         const data = estate.estates.find(element => element.id === parseInt(id));
                         if (data) {
                             foundEstate = data;
                         }
-                        console.log('estate',foundEstate);
+
                     });
                     
                     return foundEstate;
                 }),
-                tap(console.log)
             );
     }
 }
